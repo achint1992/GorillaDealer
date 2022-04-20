@@ -31,6 +31,7 @@ import com.technoecorp.gorilladealer.bean.stateResponse.StateResponseBean;
 import com.technoecorp.gorilladealer.dialog.CustomDialogClass;
 import com.technoecorp.gorilladealer.interfaces.OkHttpCustomResponse;
 import com.technoecorp.gorilladealer.utils.APICallConstants;
+import com.technoecorp.gorilladealer.utils.ErrorMessage;
 import com.technoecorp.gorilladealer.utils.HttpCall;
 import com.technoecorp.gorilladealer.utils.NetworkUtil;
 import com.technoecorp.gorilladealer.utils.ResourceUtils;
