@@ -120,7 +120,7 @@ public class KycActivity extends AppCompatActivity {
             s3.setRegion(Region.getRegion(Regions.AP_SOUTH_1));
             transferUtility = new TransferUtility(s3, getApplicationContext());
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e("Error",e.getMessage());
         }
         initView();
         if (!isValidationProfile()) {
@@ -371,7 +371,7 @@ public class KycActivity extends AppCompatActivity {
                 ToastUtil.showToast(KycActivity.this, ResourceUtils.getString(KycActivity.this, R.string.internet_connection));
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e("Error",e.getMessage());
         }
     }
 
@@ -431,7 +431,7 @@ public class KycActivity extends AppCompatActivity {
                             uploadURL(file.getAbsolutePath(), "compress_" + dealer.getMobileNo() + "_" + dealer.getDealerId() + "_add_proof.jpg", ADDRESS_ID_CROP_REQUEST);
                         }
                     } catch (URISyntaxException e) {
-                        e.printStackTrace();
+                        Log.e("Error",e.getMessage());
                     }
                 }
             }

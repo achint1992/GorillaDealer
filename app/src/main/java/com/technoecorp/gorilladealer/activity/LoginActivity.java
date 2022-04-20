@@ -130,7 +130,7 @@ public class LoginActivity extends AppCompatActivity {
                 ToastUtil.showToast(LoginActivity.this, ResourceUtils.getString(LoginActivity.this, R.string.internet_connection));
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e("Error",e.getMessage());
         }
 
     }

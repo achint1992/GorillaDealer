@@ -71,7 +71,7 @@
 
 
                             <ImageView
-                                android:id="@+id/profile_image"
+                                android:id="@+id/profileImage"
                                 android:layout_width="@dimen/_90sdp"
                                 android:layout_height="@dimen/_90sdp"
                                 android:src="@drawable/profile" />
@@ -79,8 +79,8 @@
                             <ImageView
                                 android:layout_width="@dimen/_24sdp"
                                 android:layout_height="@dimen/_24sdp"
-                                android:layout_alignRight="@+id/profile_image"
-                                android:layout_alignBottom="@+id/profile_image"
+                                android:layout_alignRight="@+id/profileImage"
+                                android:layout_alignBottom="@+id/profileImage"
                                 android:layout_margin="@dimen/_5sdp"
                                 android:src="@drawable/ic_round_camera_alt_24" />
                         </RelativeLayout>

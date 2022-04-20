@@ -189,7 +189,7 @@ public class ProductListActivity extends AppCompatActivity {
                 ToastUtil.showToast(ProductListActivity.this, ResourceUtils.getString(context, R.string.internet_connection));
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e("Error",e.getMessage());
         }
     }
 

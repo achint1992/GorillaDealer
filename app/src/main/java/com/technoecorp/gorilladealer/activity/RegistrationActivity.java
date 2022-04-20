@@ -47,7 +47,7 @@ public class RegistrationActivity extends AppCompatActivity {
     TextInputEditText userEmail;
     @BindView(R.id.refCode)
     TextInputEditText refCode;
-    Pattern pattern = Pattern.compile("^(.+)@(.+)$");
+    Pattern pattern = Pattern.compile("^[\\\\w!#$%&’*+/=?`{|}~^-]+(?:\\\\.[\\\\w!#$%&’*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\\\.)+[a-zA-Z]{2,6}$");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -160,7 +160,7 @@ public class RegistrationActivity extends AppCompatActivity {
                 ToastUtil.showToast(RegistrationActivity.this, ResourceUtils.getString(RegistrationActivity.this, R.string.internet_connection));
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e("Error",e.getMessage());
         }
 
     }
@@ -232,7 +232,7 @@ public class RegistrationActivity extends AppCompatActivity {
                 ToastUtil.showToast(RegistrationActivity.this, ResourceUtils.getString(RegistrationActivity.this, R.string.internet_connection));
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e("Error",e.getMessage());
         }
 
     }

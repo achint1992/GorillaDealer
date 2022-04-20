@@ -232,7 +232,7 @@ public class EditProfileActivity extends AppCompatActivity {
                 ToastUtil.showToast(EditProfileActivity.this, ResourceUtils.getString(context, R.string.internet_connection));
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e("Error",e.getMessage());
         }
     }
 
@@ -280,7 +280,7 @@ public class EditProfileActivity extends AppCompatActivity {
                 ToastUtil.showToast(EditProfileActivity.this, ResourceUtils.getString(context, R.string.internet_connection));
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e("Error",e.getMessage());
         }
     }
 
@@ -331,7 +331,7 @@ public class EditProfileActivity extends AppCompatActivity {
                 ToastUtil.showToast(EditProfileActivity.this, ResourceUtils.getString(context, R.string.internet_connection));
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e("Error",e.getMessage());
         }
     }
 
@@ -440,7 +440,7 @@ public class EditProfileActivity extends AppCompatActivity {
                 ToastUtil.showToast(EditProfileActivity.this, ResourceUtils.getString(EditProfileActivity.this, R.string.internet_connection));
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e("Error",e.getMessage());
         }
     }
 

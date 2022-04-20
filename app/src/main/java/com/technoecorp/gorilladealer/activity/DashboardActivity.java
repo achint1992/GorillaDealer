@@ -82,8 +82,8 @@ import okhttp3.Response;
 public class DashboardActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     @BindView(R.id.drawer_layout)
     DrawerLayout drawerLayout;
-    @BindView(R.id.nav_view)
-    NavigationView nav_view;
+    @BindView(R.id.navigationView)
+    NavigationView navView;
     @BindView(R.id.toolbar)
     Toolbar toolbar;
     @BindView(R.id.userName)
@@ -129,8 +129,8 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
     @BindView(R.id.cardFive)
     MaterialCardView cardFive;
 
-    @BindView(R.id.profile_image)
-    ImageView profile_image;
+    @BindView(R.id.profileImage)
+    ImageView profileImage;
     @BindView(R.id.profileImageContainer)
     RelativeLayout profileImageContainer;
     @BindView(R.id.textAnimation)
@@ -155,8 +155,7 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
     private TransferUtility transferUtility;
     TextView userNameMenu;
     Dealer dealer;
-    final int PERMISSION_DISK_WRITE_CODE = 102;
-    final int PERMISSION_CAMERA_CODE = 103;
+    static final int permissionDiskWriteCode = 102;
     ArrayList<String> recentList = new ArrayList<>();
     AlertDialog dialog;
 
@@ -172,9 +171,9 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
         toggle.getDrawerArrowDrawable().setColor(getResources().getColor(R.color.colorPrimaryDark));
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
-        nav_view.setNavigationItemSelectedListener(this);
-        nav_view.setItemIconTintList(null);
-        View navHeaderView = nav_view.getHeaderView(0);
+        navView.setNavigationItemSelectedListener(this);
+        navView.setItemIconTintList(null);
+        View navHeaderView = navView.getHeaderView(0);
         userNameMenu = navHeaderView.findViewById(R.id.userNameMenu);
         try {
             String secret = ResourceUtils.getString(DashboardActivity.this, R.string.aws_secret);
@@ -184,7 +183,7 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
             s3.setRegion(Region.getRegion(Regions.AP_SOUTH_1));
             transferUtility = new TransferUtility(s3, getApplicationContext());
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e("Error", e.getMessage());
         }
 
         initView();
@@ -203,7 +202,7 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
                 drawerLayout.closeDrawer(GravityCompat.START);
                 return true;
             case R.id.menu_idCard:
-                if (dealer.getPayment().size() > 0) {
+                if (dealer.getPayment().isEmpty()) {
                     intent = new Intent(Intent.ACTION_VIEW);
                     intent.setData(Uri.parse(dealerCard + dealer.getDealerId()));
                     startActivity(intent);
@@ -211,7 +210,7 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
                 drawerLayout.closeDrawer(GravityCompat.START);
                 return true;
             case R.id.menu_certificate:
-                if (dealer.getPayment().size() > 0) {
+                if (dealer.getPayment().isEmpty()) {
                     intent = new Intent(Intent.ACTION_VIEW);
                     intent.setData(Uri.parse(certificate + dealer.getDealerId()));
                     startActivity(intent);
@@ -291,7 +290,7 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
             imageLoader.init(ImageLoaderConfiguration.createDefault(getApplicationContext()));
             if (dealer.getProfilePic() != null) {
                 if (!dealer.getProfilePic().equalsIgnoreCase("")) {
-                    imageLoader.displayImage(dealer.getProfilePic(), profile_image);
+                    imageLoader.displayImage(dealer.getProfilePic(), profileImage);
                 }
             }
             shareIcon.setOnClickListener(new View.OnClickListener() {
@@ -461,7 +460,7 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
             setDataForDashBoard(dashboard);
         }
 
-        if(dealer.getPayment().size()==0){
+        if (dealer.getPayment().size() == 0) {
             showMaterialDialog();
         }
 
@@ -503,7 +502,7 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         switch (requestCode) {
-            case PERMISSION_DISK_WRITE_CODE:
+            case permissionDiskWriteCode:
                 startImagePicker();
                 break;
         }
@@ -513,7 +512,7 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
 
     void requestPermission() {
         if (!PermissionUtils.checkPhoneAccess(DashboardActivity.this)) {
-            PermissionUtils.requestStorage(DashboardActivity.this, PERMISSION_DISK_WRITE_CODE);
+            PermissionUtils.requestStorage(DashboardActivity.this, permissionDiskWriteCode);
         }
     }
 
@@ -524,13 +523,13 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
             if (resultCode == Activity.RESULT_OK) {
                 Uri uri = data.getData();
                 if (uri != null) {
-                    profile_image.setImageURI(uri);
+                    profileImage.setImageURI(uri);
                     Log.e("RUI is", uri.getPath());
                     try {
                         File file = new File(new URI(uri.toString()));
                         uploadURL(file.getAbsolutePath(), "compress_" + dealer.getMobileNo() + "_" + dealer.getDealerId() + ".jpg");
                     } catch (URISyntaxException e) {
-                        e.printStackTrace();
+                        Log.e("Error", e.getMessage());
                     }
                 }
             }
@@ -711,7 +710,7 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
                 ToastUtil.showToast(this, ResourceUtils.getString(this, R.string.internet_connection));
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e("Error", e.getMessage());
         }
 
     }
@@ -833,7 +832,7 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
                 ToastUtil.showToast(this, ResourceUtils.getString(this, R.string.internet_connection));
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e("Error", e.getMessage());
         }
 
     }

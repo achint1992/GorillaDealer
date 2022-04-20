@@ -62,7 +62,7 @@ public class HttpCall {
             client.newCall(request).enqueue(new Callback() {
                 @Override
                 public void onFailure(Call call, IOException e) {
-                    e.printStackTrace();
+                    Log.e("Error",e.getMessage());
                     okHttpCustomResponse.onFailure(call, e);
                 }
 
@@ -107,7 +107,7 @@ public class HttpCall {
             client.newCall(request).enqueue(new Callback() {
                 @Override
                 public void onFailure(Call call, IOException e) {
-                    e.printStackTrace();
+                    Log.e("Error",e.getMessage());
                     okHttpCustomResponse.onFailure(call, e);
                 }
 
@@ -150,7 +150,7 @@ public class HttpCall {
             client.newCall(request).enqueue(new Callback() {
                 @Override
                 public void onFailure(Call call, IOException e) {
-                    e.printStackTrace();
+                    Log.e("Error",e.getMessage());
                     okHttpCustomResponse.onFailure(call, e);
                 }
 
@@ -195,7 +195,7 @@ public class HttpCall {
             client.newCall(request).enqueue(new Callback() {
                 @Override
                 public void onFailure(Call call, IOException e) {
-                    e.printStackTrace();
+                    Log.e("Error",e.getMessage());
                     okHttpCustomResponse.onFailure(call, e);
                 }
 
@@ -236,7 +236,7 @@ public class HttpCall {
             client.newCall(request).enqueue(new Callback() {
                 @Override
                 public void onFailure(Call call, IOException e) {
-                    e.printStackTrace();
+                    Log.e("Error",e.getMessage());
                     okHttpCustomResponse.onFailure(call, e);
                 }
 

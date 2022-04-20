@@ -160,7 +160,7 @@ public class ProductPackageListAdapter extends RecyclerView.Adapter<ProductPacka
                 ToastUtil.showToast(activity, ResourceUtils.getString(activity, R.string.internet_connection));
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e("Error",e.getMessage());
         }
     }
 
