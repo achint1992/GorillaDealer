@@ -27,7 +27,7 @@ import okhttp3.Response;
 /**
  * Created by developer on 09/07/16.
  */
-public class HttpCall {
+public class HttpCall implements Callback{
 
     private static final String TAG = HttpCall.class.getSimpleName();
     private OkHttpCustomResponse okHttpCustomResponse;
@@ -59,29 +59,7 @@ public class HttpCall {
                     .addHeader("content-type", "application/x-www-form-urlencoded")
                     .post(requestBody)
                     .build();
-            client.newCall(request).enqueue(new Callback() {
-                @Override
-                public void onFailure(Call call, IOException e) {
-                    Log.e("Error",e.getMessage());
-                    okHttpCustomResponse.onFailure(call, e);
-                }
-
-                @Override
-                public void onResponse(Call call, final Response response) throws IOException {
-                    switch (response.code()) {
-                        case 500:
-                            onFailure(call, new IOException("Unexpected code " + response));
-                        default:
-                            if (response.code() >= 200 && response.code() < 300) {
-                                okHttpCustomResponse.onResponse(call, response);
-                            } else {
-                                onFailure(call, new IOException("Unexpected code " + response));
-                            }
-                            break;
-                    }
-
-                }
-            });
+            client.newCall(request).enqueue(this);
         } else {
            ToastUtil.showToast(context, "No listener has been created...");
         }
@@ -104,29 +82,7 @@ public class HttpCall {
                     .post(requestBody)
                     .build();
 
-            client.newCall(request).enqueue(new Callback() {
-                @Override
-                public void onFailure(Call call, IOException e) {
-                    Log.e("Error",e.getMessage());
-                    okHttpCustomResponse.onFailure(call, e);
-                }
-
-                @Override
-                public void onResponse(Call call, final Response response) throws IOException {
-                    switch (response.code()) {
-                        case 500:
-                            onFailure(call, new IOException("Unexpected code " + response));
-                        default:
-                            if (response.code() >= 200 && response.code() < 404) {
-                                okHttpCustomResponse.onResponse(call, response);
-                            } else {
-                                onFailure(call, new IOException("Unexpected code " + response));
-                            }
-                            break;
-                    }
-
-                }
-            });
+            client.newCall(request).enqueue(this);
         } else {
             ToastUtil.showToast(context, "No listener has been created...");
         }
@@ -147,29 +103,7 @@ public class HttpCall {
                     .post(requestBody)
                     .build();
 
-            client.newCall(request).enqueue(new Callback() {
-                @Override
-                public void onFailure(Call call, IOException e) {
-                    Log.e("Error",e.getMessage());
-                    okHttpCustomResponse.onFailure(call, e);
-                }
-
-                @Override
-                public void onResponse(Call call, final Response response) throws IOException {
-                    switch (response.code()) {
-                        case 500:
-                            onFailure(call, new IOException("Unexpected code " + response));
-                        default:
-                            if (response.code() >= 200 && response.code() < 300) {
-                                okHttpCustomResponse.onResponse(call, response);
-                            } else {
-                                onFailure(call, new IOException("Unexpected code " + response));
-                            }
-                            break;
-                    }
-
-                }
-            });
+            client.newCall(request).enqueue(this);
         } else {
            ToastUtil.showToast(context, "No listener has been created...");
         }
@@ -192,29 +126,7 @@ public class HttpCall {
                     .addHeader("content-type", "application/json")
                     .build();
 
-            client.newCall(request).enqueue(new Callback() {
-                @Override
-                public void onFailure(Call call, IOException e) {
-                    Log.e("Error",e.getMessage());
-                    okHttpCustomResponse.onFailure(call, e);
-                }
-
-                @Override
-                public void onResponse(Call call, final Response response) throws IOException {
-                    switch (response.code()) {
-                        case 500:
-                            onFailure(call, new IOException("Unexpected code " + response));
-                        default:
-                            if (response.code() >= 200 && response.code() < 300) {
-                                okHttpCustomResponse.onResponse(call, response);
-                            } else {
-                                onFailure(call, new IOException("Unexpected code " + response));
-                            }
-                            break;
-                    }
-
-                }
-            });
+            client.newCall(request).enqueue(this);
         } else {
            ToastUtil.showToast(context, "No listener has been created...");
         }
@@ -233,33 +145,31 @@ public class HttpCall {
                     .get()
                     .build();
 
-            client.newCall(request).enqueue(new Callback() {
-                @Override
-                public void onFailure(Call call, IOException e) {
-                    Log.e("Error",e.getMessage());
-                    okHttpCustomResponse.onFailure(call, e);
-                }
-
-                @Override
-                public void onResponse(Call call, final Response response) throws IOException {
-                    switch (response.code()) {
-                        case 500:
-                            onFailure(call, new IOException("Unexpected code " + response));
-                        default:
-                            if (response.code() >= 200 && response.code() < 300) {
-                                okHttpCustomResponse.onResponse(call, response);
-                            } else {
-                                onFailure(call, new IOException("Unexpected code " + response));
-                            }
-                            break;
-                    }
-
-                }
-            });
+            client.newCall(request).enqueue(this);
         } else {
            ToastUtil.showToast(context, "No listener has been created...");
         }
     }
 
 
+    @Override
+    public void onFailure(Call call, IOException e) {
+        Log.e("Error",e.getMessage());
+        okHttpCustomResponse.onFailure(call, e);
+    }
+
+    @Override
+    public void onResponse(Call call, Response response) throws IOException {
+        switch (response.code()) {
+            case 500:
+                onFailure(call, new IOException("Unexpected code " + response));
+            default:
+                if (response.code() >= 200 && response.code() < 300) {
+                    okHttpCustomResponse.onResponse(call, response);
+                } else {
+                    onFailure(call, new IOException("Unexpected code " + response));
+                }
+                break;
+        }
+    }
 }

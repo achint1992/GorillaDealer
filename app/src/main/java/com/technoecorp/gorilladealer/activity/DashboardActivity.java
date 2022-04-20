@@ -574,7 +574,7 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
 
             @Override
             public void onError(int id, Exception ex) {
-                ex.printStackTrace();
+                Log.e("Error",ex.getMessage());
                 Log.e("error is ", ex.toString());
             }
         });

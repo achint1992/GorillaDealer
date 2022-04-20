@@ -480,7 +480,7 @@ public class KycActivity extends AppCompatActivity {
 
             @Override
             public void onError(int id, Exception ex) {
-                ex.printStackTrace();
+                Log.e("Error",ex.getMessage());
                 Log.e("error is ", ex.toString());
             }
         });
