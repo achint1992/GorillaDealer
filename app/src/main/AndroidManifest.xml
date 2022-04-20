@@ -49,10 +49,7 @@
             android:name=".activity.DashboardActivity"
             android:screenOrientation="sensorPortrait"
             android:theme="@style/SplashTheme" />
-        <activity
-            android:name=".activity.SplashActivity"
-            android:screenOrientation="sensorPortrait"
-            android:theme="@style/SplashTheme" />
+
         <activity
             android:name=".activity.DealerLoginActivity"
             android:exported="true"
