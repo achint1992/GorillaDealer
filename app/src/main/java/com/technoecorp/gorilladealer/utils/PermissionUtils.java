@@ -37,13 +37,8 @@ public class PermissionUtils {
     //Request Permission
 
     public static void requestStorage(Activity act, int code) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            ActivityCompat.requestPermissions(act, new
-                    String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE}, code);
-        } else {
-            ActivityCompat.requestPermissions(act, new
-                    String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE}, code);
-        }
+        ActivityCompat.requestPermissions(act, new
+                String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE}, code);
     }
 
     public static void requestCamera(Activity act, int code) {

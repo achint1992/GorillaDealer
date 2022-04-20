@@ -38,6 +38,7 @@ public class DealerListAdapter extends RecyclerView.Adapter<DealerListAdapter.Vi
     private ArrayList<Dealer> mDataArray;
     int[] androidColors;
     Typeface tf;
+    Random randomObj=new Random();
 
 
     //TODO: remove this later
@@ -79,7 +80,7 @@ public class DealerListAdapter extends RecyclerView.Adapter<DealerListAdapter.Vi
     @Override
     public void onBindViewHolder(DealerListAdapter.ViewHolder holder, @SuppressLint("RecyclerView") final int position) {
         holder.nameText.setText(mDataArray.get(position).getName());
-        int random = new Random().nextInt(androidColors.length);
+        int random = randomObj.nextInt(androidColors.length);
         TextDrawable textDrawable = TextDrawable.builder().beginConfig().useFont(tf).endConfig().buildRound(((Character) mDataArray.get(position).getName().toUpperCase(Locale.ROOT).charAt(0)).toString(), androidColors[random]);
         holder.ivAvatar.setImageDrawable(textDrawable);
         holder.phoneText.setText(mDataArray.get(position).getMobileNo());

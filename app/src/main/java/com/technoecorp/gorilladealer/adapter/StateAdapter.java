@@ -38,6 +38,7 @@ public class StateAdapter extends RecyclerView.Adapter<StateAdapter.ViewHolder> 
     Context context;
     Activity activity;
     private ArrayList<StateWiseCount> mDataArray;
+    Random randomObj=new Random();
 
 
     //TODO: remove this later
@@ -58,7 +59,7 @@ public class StateAdapter extends RecyclerView.Adapter<StateAdapter.ViewHolder> 
         this.mDataArray.addAll(mDataArray);
         for(int i=0;i<mDataArray.size();i++){
             int[] androidColors = activity.getResources().getIntArray(R.array.androidcolors);
-            int randomAndroidColor = androidColors[new Random().nextInt(androidColors.length)];
+            int randomAndroidColor = androidColors[randomObj.nextInt(androidColors.length)];
             mDataArray.get(i).setColorCode(randomAndroidColor);
         }
         notifyDataSetChanged();

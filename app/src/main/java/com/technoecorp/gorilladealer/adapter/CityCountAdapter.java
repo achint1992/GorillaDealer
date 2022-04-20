@@ -42,6 +42,7 @@ public class CityCountAdapter extends RecyclerView.Adapter<CityCountAdapter.View
     int[] androidColors;
     Typeface tf;
     int stateId;
+    Random randomObj=new Random();
 
 
     //TODO: remove this later
@@ -86,7 +87,7 @@ public class CityCountAdapter extends RecyclerView.Adapter<CityCountAdapter.View
     @Override
     public void onBindViewHolder(CityCountAdapter.ViewHolder holder, @SuppressLint("RecyclerView") final int position) {
         holder.nameText.setText(mDataArray.get(position).getCityName());
-        int random = new Random().nextInt(androidColors.length);
+        int random = randomObj.nextInt(androidColors.length);
         TextDrawable textDrawable = TextDrawable.builder().beginConfig().useFont(tf).endConfig()
                 .buildRound(((Character) mDataArray.get(position).getCityName().toUpperCase(Locale.ROOT).charAt(0)).toString(), androidColors[random]);
         holder.ivAvatar.setImageDrawable(textDrawable);
