@@ -175,7 +175,7 @@ public class DealerListActivity extends AppCompatActivity {
                 ToastUtil.showToast(DealerListActivity.this, ResourceUtils.getString(context, R.string.internet_connection));
             }
         } catch (Exception e) {
-            Log.e("Error",e.getMessage());
+            ErrorMessage.showError(e);
         }
     }
 
@@ -242,7 +242,7 @@ public class DealerListActivity extends AppCompatActivity {
                 ToastUtil.showToast(DealerListActivity.this, ResourceUtils.getString(context, R.string.internet_connection));
             }
         } catch (Exception e) {
-            Log.e("Error",e.getMessage());
+            ErrorMessage.showError(e);
         }
     }
 
@@ -304,7 +304,7 @@ public class DealerListActivity extends AppCompatActivity {
                 }
             }
         } catch (Exception e) {
-            Log.e("Error",e.getMessage());
+            ErrorMessage.showError(e);
         }
     }
 

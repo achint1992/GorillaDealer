@@ -137,7 +137,7 @@ public class OtpActivity extends AppCompatActivity {
                 ToastUtil.showToast(OtpActivity.this, ResourceUtils.getString(OtpActivity.this, R.string.internet_connection));
             }
         } catch (Exception e) {
-            Log.e("Error",e.getMessage());
+            ErrorMessage.showError(e);
         }
 
     }

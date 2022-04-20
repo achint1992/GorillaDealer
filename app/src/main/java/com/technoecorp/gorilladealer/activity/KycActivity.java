@@ -40,6 +40,7 @@ import com.technoecorp.gorilladealer.bean.OTPBean.Dealer;
 import com.technoecorp.gorilladealer.dialog.CustomDialogClass;
 import com.technoecorp.gorilladealer.interfaces.OkHttpCustomResponse;
 import com.technoecorp.gorilladealer.utils.APICallConstants;
+import com.technoecorp.gorilladealer.utils.ErrorMessage;
 import com.technoecorp.gorilladealer.utils.HttpCall;
 import com.technoecorp.gorilladealer.utils.NetworkUtil;
 import com.technoecorp.gorilladealer.utils.PermissionUtils;
@@ -120,7 +121,7 @@ public class KycActivity extends AppCompatActivity {
             s3.setRegion(Region.getRegion(Regions.AP_SOUTH_1));
             transferUtility = new TransferUtility(s3, getApplicationContext());
         } catch (Exception e) {
-            Log.e("Error",e.getMessage());
+            ErrorMessage.showError(e);
         }
         initView();
         if (!isValidationProfile()) {
@@ -371,7 +372,7 @@ public class KycActivity extends AppCompatActivity {
                 ToastUtil.showToast(KycActivity.this, ResourceUtils.getString(KycActivity.this, R.string.internet_connection));
             }
         } catch (Exception e) {
-            Log.e("Error",e.getMessage());
+            ErrorMessage.showError(e);
         }
     }
 
@@ -431,7 +432,7 @@ public class KycActivity extends AppCompatActivity {
                             uploadURL(file.getAbsolutePath(), "compress_" + dealer.getMobileNo() + "_" + dealer.getDealerId() + "_add_proof.jpg", ADDRESS_ID_CROP_REQUEST);
                         }
                     } catch (URISyntaxException e) {
-                        Log.e("Error",e.getMessage());
+                        ErrorMessage.showError(e);
                     }
                 }
             }
@@ -480,8 +481,7 @@ public class KycActivity extends AppCompatActivity {
 
             @Override
             public void onError(int id, Exception ex) {
-                Log.e("Error",ex.getMessage());
-                Log.e("error is ", ex.toString());
+                ErrorMessage.showError(ex);
             }
         });
     }

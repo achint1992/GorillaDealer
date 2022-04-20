@@ -59,6 +59,7 @@ import com.technoecorp.gorilladealer.bean.OTPBean.Dealer;
 import com.technoecorp.gorilladealer.dialog.CustomDialogClass;
 import com.technoecorp.gorilladealer.interfaces.OkHttpCustomResponse;
 import com.technoecorp.gorilladealer.utils.APICallConstants;
+import com.technoecorp.gorilladealer.utils.ErrorMessage;
 import com.technoecorp.gorilladealer.utils.HttpCall;
 import com.technoecorp.gorilladealer.utils.NetworkUtil;
 import com.technoecorp.gorilladealer.utils.PermissionUtils;
@@ -155,7 +156,7 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
     private TransferUtility transferUtility;
     TextView userNameMenu;
     Dealer dealer;
-    static final int permissionDiskWriteCode = 102;
+    static final int WRITE_CODE = 102;
     ArrayList<String> recentList = new ArrayList<>();
     AlertDialog dialog;
 
@@ -183,10 +184,18 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
             s3.setRegion(Region.getRegion(Regions.AP_SOUTH_1));
             transferUtility = new TransferUtility(s3, getApplicationContext());
         } catch (Exception e) {
-            Log.e("Error", e.getMessage());
+            ErrorMessage.showError(e);
         }
 
         initView();
+    }
+
+    void createActionIntent(String baseUrl){
+        if (dealer.getPayment().isEmpty()) {
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setData(Uri.parse(baseUrl + dealer.getDealerId()));
+            startActivity(intent);
+        }
     }
 
     @Override
@@ -202,19 +211,11 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
                 drawerLayout.closeDrawer(GravityCompat.START);
                 return true;
             case R.id.menu_idCard:
-                if (dealer.getPayment().isEmpty()) {
-                    intent = new Intent(Intent.ACTION_VIEW);
-                    intent.setData(Uri.parse(dealerCard + dealer.getDealerId()));
-                    startActivity(intent);
-                }
+                createActionIntent(dealerCard);
                 drawerLayout.closeDrawer(GravityCompat.START);
                 return true;
             case R.id.menu_certificate:
-                if (dealer.getPayment().isEmpty()) {
-                    intent = new Intent(Intent.ACTION_VIEW);
-                    intent.setData(Uri.parse(certificate + dealer.getDealerId()));
-                    startActivity(intent);
-                }
+                createActionIntent(certificate);
                 drawerLayout.closeDrawer(GravityCompat.START);
                 return true;
 
@@ -502,7 +503,7 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         switch (requestCode) {
-            case permissionDiskWriteCode:
+            case WRITE_CODE:
                 startImagePicker();
                 break;
         }
@@ -512,7 +513,7 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
 
     void requestPermission() {
         if (!PermissionUtils.checkPhoneAccess(DashboardActivity.this)) {
-            PermissionUtils.requestStorage(DashboardActivity.this, permissionDiskWriteCode);
+            PermissionUtils.requestStorage(DashboardActivity.this, WRITE_CODE);
         }
     }
 
@@ -529,7 +530,7 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
                         File file = new File(new URI(uri.toString()));
                         uploadURL(file.getAbsolutePath(), "compress_" + dealer.getMobileNo() + "_" + dealer.getDealerId() + ".jpg");
                     } catch (URISyntaxException e) {
-                        Log.e("Error", e.getMessage());
+                        ErrorMessage.showError(e);
                     }
                 }
             }
@@ -574,8 +575,8 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
 
             @Override
             public void onError(int id, Exception ex) {
-                Log.e("Error",ex.getMessage());
-                Log.e("error is ", ex.toString());
+                ErrorMessage.showError(ex);
+
             }
         });
     }
@@ -710,7 +711,7 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
                 ToastUtil.showToast(this, ResourceUtils.getString(this, R.string.internet_connection));
             }
         } catch (Exception e) {
-            Log.e("Error", e.getMessage());
+            ErrorMessage.showError(e);
         }
 
     }
@@ -832,7 +833,7 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
                 ToastUtil.showToast(this, ResourceUtils.getString(this, R.string.internet_connection));
             }
         } catch (Exception e) {
-            Log.e("Error", e.getMessage());
+            ErrorMessage.showError(e);
         }
 
     }

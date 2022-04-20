@@ -160,7 +160,7 @@ public class RegistrationActivity extends AppCompatActivity {
                 ToastUtil.showToast(RegistrationActivity.this, ResourceUtils.getString(RegistrationActivity.this, R.string.internet_connection));
             }
         } catch (Exception e) {
-            Log.e("Error",e.getMessage());
+            ErrorMessage.showError(e);
         }
 
     }
@@ -232,7 +232,7 @@ public class RegistrationActivity extends AppCompatActivity {
                 ToastUtil.showToast(RegistrationActivity.this, ResourceUtils.getString(RegistrationActivity.this, R.string.internet_connection));
             }
         } catch (Exception e) {
-            Log.e("Error",e.getMessage());
+            ErrorMessage.showError(e);
         }
 
     }
