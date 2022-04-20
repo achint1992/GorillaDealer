@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Android Projects/GorillaDealer/app/src/main/res/drawable/dashboard_background_stroke.xml" value="0.2833333333333333" />
+        <entry key="..\:/Android Projects/GorillaDealer/app/src/main/res/drawable/ic_baseline_arrow_back_ios_24.xml" value="0.2833333333333333" />
+        <entry key="..\:/Android Projects/GorillaDealer/app/src/main/res/drawable/ic_baseline_business_center_24.xml" value="0.2833333333333333" />
+        <entry key="..\:/Android Projects/GorillaDealer/app/src/main/res/drawable/ic_baseline_share_24.xml" value="0.2833333333333333" />
+        <entry key="..\:/Android Projects/GorillaDealer/app/src/main/res/drawable/ic_home.xml" value="0.2833333333333333" />
+        <entry key="..\:/Android Projects/GorillaDealer/app/src/main/res/drawable/ic_round_camera_alt_24.xml" value="0.2833333333333333" />
+        <entry key="..\:/Android Projects/GorillaDealer/app/src/main/res/drawable/ic_round_done_24.xml" value="0.2833333333333333" />
+        <entry key="..\:/Android Projects/GorillaDealer/app/src/main/res/drawable/ic_techoesoftservices_svg.xml" value="0.2833333333333333" />
+        <entry key="..\:/Android Projects/GorillaDealer/app/src/main/res/drawable/ic_twotone_cloud_download_24.xml" value="0.26481481481481484" />
+        <entry key="..\:/Android Projects/GorillaDealer/app/src/main/res/drawable/ic_twotone_contact_phone_24.xml" value="0.2833333333333333" />
+        <entry key="..\:/Android Projects/GorillaDealer/app/src/main/res/drawable/ic_twotone_perm_identity_24.xml" value="0.20555555555555555" />
+        <entry key="..\:/Android Projects/GorillaDealer/app/src/main/res/drawable/panel_background_stroke.xml" value="0.2833333333333333" />
+        <entry key="..\:/Android Projects/GorillaDealer/app/src/main/res/drawable/rounded_rect_white.xml" value="0.2833333333333333" />
+        <entry key="..\:/Android Projects/GorillaDealer/app/src/main/res/drawable/rouned_dashed_box.xml" value="0.2777777777777778" />
+        <entry key="..\:/Android Projects/GorillaDealer/app/src/main/res/font/proximanova_regular.xml" value="0.20185185185185187" />
+        <entry key="..\:/Android Projects/GorillaDealer/app/src/main/res/layout/activity_Income_list.xml" value="0.3609375" />
+        <entry key="..\:/Android Projects/GorillaDealer/app/src/main/res/layout/activity_dashboard.xml" value="0.1742354031510658" />
+        <entry key="..\:/Android Projects/GorillaDealer/app/src/main/res/layout/activity_dealer_list.xml" value="0.22" />
+        <entry key="..\:/Android Projects/GorillaDealer/app/src/main/res/layout/activity_dealer_login.xml" value="0.1697061803444782" />
+        <entry key="..\:/Android Projects/GorillaDealer/app/src/main/res/layout/activity_edit_profile.xml" value="0.22" />
+        <entry key="..\:/Android Projects/GorillaDealer/app/src/main/res/layout/activity_gallery.xml" value="0.3489583333333333" />
+        <entry key="..\:/Android Projects/GorillaDealer/app/src/main/res/layout/activity_image_full.xml" value="0.3489583333333333" />
+        <entry key="..\:/Android Projects/GorillaDealer/app/src/main/res/layout/activity_income_list.xml" value="0.3489583333333333" />
+        <entry key="..\:/Android Projects/GorillaDealer/app/src/main/res/layout/activity_kyc.xml" value="0.3489583333333333" />
+        <entry key="..\:/Android Projects/GorillaDealer/app/src/main/res/layout/activity_login.xml" value="0.15555555555555556" />
+        <entry key="..\:/Android Projects/GorillaDealer/app/src/main/res/layout/activity_otp.xml" value="0.16666666666666666" />
+        <entry key="..\:/Android Projects/GorillaDealer/app/src/main/res/layout/activity_p_d_f.xml" value="0.3489583333333333" />
+        <entry key="..\:/Android Projects/GorillaDealer/app/src/main/res/layout/activity_policy.xml" value="0.3489583333333333" />
+        <entry key="..\:/Android Projects/GorillaDealer/app/src/main/res/layout/activity_registration.xml" value="0.15555555555555556" />
+        <entry key="..\:/Android Projects/GorillaDealer/app/src/main/res/layout/activity_youtube_full_screen.xml" value="0.3489583333333333" />
+        <entry key="..\:/Android Projects/GorillaDealer/app/src/main/res/layout/app_bar_dashboard.xml" value="0.33" />
+        <entry key="..\:/Android Projects/GorillaDealer/app/src/main/res/layout/city_count_list_item.xml" value="0.3489583333333333" />
+        <entry key="..\:/Android Projects/GorillaDealer/app/src/main/res/layout/dealer_list_item.xml" value="0.25" />
+        <entry key="..\:/Android Projects/GorillaDealer/app/src/main/res/layout/fragment_contact_info.xml" value="0.15925925925925927" />
+        <entry key="..\:/Android Projects/GorillaDealer/app/src/main/res/layout/fragment_dashboard_gallery.xml" value="0.3489583333333333" />
+        <entry key="..\:/Android Projects/GorillaDealer/app/src/main/res/layout/fragment_personal_info.xml" value="0.33" />
+        <entry key="..\:/Android Projects/GorillaDealer/app/src/main/res/layout/gallery_photo_row.xml" value="0.3489583333333333" />
+        <entry key="..\:/Android Projects/GorillaDealer/app/src/main/res/layout/package_list_item.xml" value="0.18270676691729323" />
+        <entry key="..\:/Android Projects/GorillaDealer/app/src/main/res/layout/product_list_item.xml" value="0.25" />
+        <entry key="..\:/Android Projects/GorillaDealer/app/src/main/res/layout/state_list_item.xml" value="0.18" />
+        <entry key="..\:/Android Projects/GorillaDealer/app/src/main/res/layout/state_selected_item.xml" value="0.3489583333333333" />
+        <entry key="..\:/Android Projects/GorillaDealer/app/src/main/res/layout/toolbar_back.xml" value="0.1697061803444782" />
+        <entry key="..\:/Android Projects/GorillaDealer/app/src/main/res/layout/toolbar_back_with_button.xml" value="0.25" />
+        <entry key="..\:/Android Projects/GorillaDealer/app/src/main/res/menu/menu_dashboard_navigation.xml" value="0.2351851851851852" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

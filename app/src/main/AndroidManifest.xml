@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.technoecorp.gorilladealer">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="false"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:requestLegacyExternalStorage="true"
+        android:theme="@style/Theme.GorillaDealer"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".activity.KycActivity"
+            android:exported="true"
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/RegistrationTheme"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".activity.EditProfileActivity"
+            android:exported="true"
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/RegistrationTheme"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".activity.DealerListActivity"
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/RegistrationTheme"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".activity.IncomeListActivity"
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/RegistrationTheme"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".activity.ProductListActivity"
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/RegistrationTheme"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".activity.DashboardActivity"
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/SplashTheme" />
+        <activity
+            android:name=".activity.SplashActivity"
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/SplashTheme" />
+        <activity
+            android:name=".activity.DealerLoginActivity"
+            android:exported="true"
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/SplashTheme"
+            android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data
+                    android:host="gorilladealer.page.link"
+                    android:scheme="https"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.LoginActivity"
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/RegistrationTheme"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".activity.RegistrationActivity"
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/RegistrationTheme"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".activity.OtpActivity"
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/RegistrationTheme"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".activity.PolicyActivity"
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/RegistrationTheme"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".activity.PaymentCaptureActivity"
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/RegistrationTheme"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".activity.TermOfUseActivity"
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/RegistrationTheme"
+            android:windowSoftInputMode="adjustPan" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <activity
+            android:name=".activity.ImageFullActivity"
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/RegistrationTheme" />
+        <activity
+            android:name=".activity.PDFActivity"
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/RegistrationTheme" />
+        <activity
+            android:name=".activity.GalleryActivity"
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/RegistrationTheme" />
+        <activity
+            android:name=".activity.YoutubeFullScreenActivity"
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/RegistrationTheme" />
+
+        <service
+            android:name="com.amazonaws.mobileconnectors.s3.transferutility.TransferService"
+            android:enabled="true" />
+    </application>
+
+</manifest>

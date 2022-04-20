@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="colorPrimary">#000000</color>
+    <color name="colorPrimaryDark">#353535</color>
+    <color name="colorAccent">#353535</color>
+    <color name="colorAccentLight">#6f6f6f</color>
+    <color name="light_grey">#f9f9f9</color>
+    <color name="color_white_trans">#FFFFFFFF</color>
+    <color name="antitheft">#ffb300</color>
+    <color name="rambooster">#26a69a</color>
+    <color name="rambooster_gif_start">#081a26</color>
+    <color name="rambooster_gif_end">#0c3c7c</color>
+    <color name="backup">#ff6090</color>
+    <color name="child_activity">#8bc34a</color>
+    <color name="color_progress">#303F9F</color>
+    <color name="color_progress_bg">#FFFFFF</color>
+    <color name="colorDigi">#45b6b0</color>
+    //button color option
+    <color name="earthy_red">#95424E</color>
+    <color name="limeGreen">#9ab10a</color>
+    <color name="springYellow">#FDE79D</color>
+
+    <color name="ucrop_color_toolbar">@color/colorAccent</color>
+    <color name="ucrop_color_statusbar">@color/light_grey</color>
+    <color name="ucrop_color_widget_active">@color/colorAccent</color>
+
+    <color name="currentButtonColor">#95424E</color>
+
+
+    <item name="blue" type="color">#FF33B5E5</item>
+    <item name="purple" type="color">#FFAA66CC</item>
+    <item name="green" type="color">#FF99CC00</item>
+    <item name="orange" type="color">#FFFFBB33</item>
+    <item name="red" type="color">#FFFF4444</item>
+    <item name="darkblue" type="color">#FF0099CC</item>
+    <item name="darkpurple" type="color">#FF9933CC</item>
+    <item name="darkgreen" type="color">#FF669900</item>
+    <item name="darkorange" type="color">#FFFF8800</item>
+    <item name="darkred" type="color">#FFCC0000</item>
+    <color name="bright_pink">#FF007F</color>
+    <color name="yellow">#FFFF00</color>
+    <color name="cyan">#00FFFF</color>
+    <color name="azure">#007FFF</color>
+    <color name="violet">#7F00FF</color>
+    <color name="magenta">#FF00FF</color>
+
+    <integer-array name="androidcolors">
+        <item>@color/purple</item>
+        <item>@color/green</item>
+        <item>@color/red</item>
+        <item>@color/darkblue</item>
+        <item>@color/darkpurple</item>
+        <item>@color/darkgreen</item>
+        <item>@color/darkorange</item>
+        <item>@color/darkred</item>
+        <item>@color/bright_pink</item>
+        <item>@color/azure</item>
+        <item>@color/violet</item>
+        <item>@color/magenta</item>
+        <item>@color/antitheft</item>
+        <item>@color/rambooster</item>
+        <item>@color/rambooster_gif_start</item>
+        <item>@color/rambooster_gif_end</item>
+        <item>@color/backup</item>
+        <item>@color/child_activity</item>
+        <item>@color/color_progress</item>
+        <item>@color/earthy_red</item>
+
+    </integer-array>
+
+
+</resources>

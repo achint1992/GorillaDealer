@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="10"
+    android:background="@drawable/background_gorilla"
+    tools:context=".activity.LoginActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/startingPoint"
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:orientation="horizontal" />
+
+            <LinearLayout
+                android:id="@+id/logoImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/startingPoint"
+                android:orientation="horizontal"
+                android:weightSum="10">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="6"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_50sdp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/technoecorp_logo" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/logoImage"
+                android:orientation="horizontal"
+                android:weightSum="10">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.2" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="7.6"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:hint="Account Holder Name"
+                        android:textColorHint="@color/selector_hint_text_input_black_layout"
+                        app:boxStrokeColor="@color/selector_stroke_text_input_black_layout"
+                        app:shapeAppearance="?shapeAppearanceSmallComponent">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/accountName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz "
+                            android:fontFamily="@font/proximanova_regular"
+                            android:imeOptions="actionNext"
+                            android:inputType="text"
+                            android:singleLine="true"
+                            android:textAllCaps="true"
+                            android:textColor="@color/colorPrimaryDark" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:hint="Account Number"
+                        android:textColorHint="@color/selector_hint_text_input_black_layout"
+                        app:boxStrokeColor="@color/selector_stroke_text_input_black_layout"
+                        app:shapeAppearance="?shapeAppearanceSmallComponent">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/accountNumber"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="0123456789"
+                            android:fontFamily="@font/proximanova_regular"
+                            android:imeOptions="actionNext"
+                            android:inputType="number"
+                            android:singleLine="true"
+                            android:textAllCaps="true"
+                            android:textColor="@color/colorPrimaryDark" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:hint="Confirm Account Number"
+                        android:textColorHint="@color/selector_hint_text_input_black_layout"
+                        app:boxStrokeColor="@color/selector_stroke_text_input_black_layout"
+                        app:shapeAppearance="?shapeAppearanceSmallComponent">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/confirmAccountNumber"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="0123456789"
+                            android:fontFamily="@font/proximanova_regular"
+                            android:imeOptions="actionNext"
+                            android:inputType="number"
+                            android:singleLine="true"
+                            android:textAllCaps="true"
+                            android:textColor="@color/colorPrimaryDark" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:hint="Bank Name"
+                        android:textColorHint="@color/selector_hint_text_input_black_layout"
+                        app:boxStrokeColor="@color/selector_stroke_text_input_black_layout"
+                        app:shapeAppearance="?shapeAppearanceSmallComponent">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/bankName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz "
+                            android:fontFamily="@font/proximanova_regular"
+                            android:imeOptions="actionNext"
+                            android:inputType="text"
+                            android:singleLine="true"
+                            android:textAllCaps="true"
+                            android:textColor="@color/colorPrimaryDark" />
+
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:hint="Branch Name"
+                        android:textColorHint="@color/selector_hint_text_input_black_layout"
+                        app:boxStrokeColor="@color/selector_stroke_text_input_black_layout"
+                        app:shapeAppearance="?shapeAppearanceSmallComponent">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/branchName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890 "
+                            android:fontFamily="@font/proximanova_regular"
+                            android:imeOptions="actionNext"
+                            android:inputType="text"
+                            android:singleLine="true"
+                            android:textAllCaps="true"
+                            android:textColor="@color/colorPrimaryDark" />
+
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:hint="IFSC"
+                        android:textColorHint="@color/selector_hint_text_input_black_layout"
+                        app:boxStrokeColor="@color/selector_stroke_text_input_black_layout"
+                        app:shapeAppearance="?shapeAppearanceSmallComponent">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/ifscCode"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890 "
+                            android:fontFamily="@font/proximanova_regular"
+                            android:imeOptions="actionNext"
+                            android:inputType="text"
+                            android:singleLine="true"
+                            android:textAllCaps="true"
+                            android:textColor="@color/colorPrimaryDark" />
+
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:hint="Account Type"
+                        android:textColorHint="@color/selector_hint_text_input_black_layout"
+                        app:boxStrokeColor="@color/selector_stroke_text_input_black_layout"
+                        app:shapeAppearance="?shapeAppearanceSmallComponent">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/accountType"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/proximanova_regular"
+                            android:inputType="none"
+                            android:textColor="@color/colorPrimaryDark" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@drawable/rouned_dashed_box">
+
+                        <ImageView
+                            android:layout_width="@dimen/_70sdp"
+                            android:id="@+id/addProofImage"
+                            android:src="@drawable/image_placeholder"
+                            android:layout_height="@dimen/_70sdp"
+                            android:layout_margin="@dimen/_5sdp" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/uploadAddressButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/currentButtonColor"
+                            android:fontFamily="@font/proximanova_semi"
+                            android:letterSpacing="0"
+                            android:layout_marginRight="@dimen/_10sdp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:text="Upload Add. Proof"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10ssp" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@drawable/rouned_dashed_box">
+
+                        <ImageView
+                            android:id="@+id/idProofImage"
+                            android:layout_width="@dimen/_70sdp"
+                            android:src="@drawable/image_placeholder"
+                            android:layout_height="@dimen/_70sdp"
+                            android:layout_margin="@dimen/_5sdp" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/uploadIdButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/currentButtonColor"
+                            android:fontFamily="@font/proximanova_semi"
+                            android:letterSpacing="0"
+                            android:layout_marginRight="@dimen/_10sdp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:text="Upload Id Proof"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10ssp" />
+                    </RelativeLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/registerButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:backgroundTint="@color/currentButtonColor"
+                        android:fontFamily="@font/proximanova_semi"
+                        android:letterSpacing="0"
+                        android:text="Verify KYC"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_14ssp" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.2" />
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+</LinearLayout>
