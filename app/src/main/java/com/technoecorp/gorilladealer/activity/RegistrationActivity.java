@@ -3,6 +3,7 @@ package com.technoecorp.gorilladealer.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -47,7 +48,6 @@ public class RegistrationActivity extends AppCompatActivity {
     TextInputEditText userEmail;
     @BindView(R.id.refCode)
     TextInputEditText refCode;
-    Pattern pattern = Pattern.compile("^[\\\\w!#$%&’*+/=?`{|}~^-]+(?:\\\\.[\\\\w!#$%&’*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\\\.)+[a-zA-Z]{2,6}$");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,7 +82,7 @@ public class RegistrationActivity extends AppCompatActivity {
     }
 
     boolean isValidation(String name, String mobile, String email, String refCodeText) {
-        Matcher matcher = pattern.matcher(email);
+
         if (name.equalsIgnoreCase("")) {
             ToastUtil.showToast(RegistrationActivity.this, "Full Name is required");
             return false;
@@ -92,7 +92,7 @@ public class RegistrationActivity extends AppCompatActivity {
         } else if (email.equalsIgnoreCase("")) {
             ToastUtil.showToast(RegistrationActivity.this, "Email is required");
             return false;
-        } else if (!matcher.matches()) {
+        } else if (Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             ToastUtil.showToast(RegistrationActivity.this, "Valid Email id is required");
             return false;
         } else if (refCodeText.equalsIgnoreCase("")) {
